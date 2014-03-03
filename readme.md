@@ -2,6 +2,7 @@
 
 Multi-user grocery list with receipt/money management between users.
 
+
 ### Todo
 
 - Foundation (date switching, basic authentication?)
@@ -13,6 +14,5 @@ Multi-user grocery list with receipt/money management between users.
 ### Software used
 
 - Laravel 4.1
-- AngularJS v1.2.11
-- jQuery 1.10.2
-- Twitter Bootstrap v3.1.0
+- AngularJS v1.2.14
+- AngularStrap v2.0.0-rc.3
