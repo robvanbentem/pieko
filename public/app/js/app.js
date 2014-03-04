@@ -20,15 +20,15 @@ pieko.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
     $locationProvider.html5Mode(true);
     $routeProvider.
         when('/shoplist', {
-            templateUrl: 'pieko/shoplist/index.html',
+            templateUrl: 'pieko/ui/shoplist/index.html',
             controller: 'CShoplist'
         }).
         when('/todo', {
-            templateUrl: 'pieko/common/todo.html',
+            templateUrl: 'pieko/ui/common/todo.html',
             controller: 'CTodo'
         }).
         when('/receipt', {
-            templateUrl: 'pieko/receipt/index.html',
+            templateUrl: 'pieko/ui/receipt/index.html',
             controller: 'CReceipt'
         }).
         otherwise({

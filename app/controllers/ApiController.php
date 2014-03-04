@@ -7,4 +7,18 @@
 
 class ApiController extends Controller {
 
+    /**
+     * @param array $array
+     * @return string
+     * @throws Exception
+     */
+    public function toJson(array $array)
+    {
+        if($json = json_encode($array)){
+            return $json;
+        }
+
+        throw new Exception('Cannot encode to json');
+    }
+
 } 
