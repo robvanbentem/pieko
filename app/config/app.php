@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://pieko.intern.dev.unifact.net',
+	'url' => 'http://pieko.dev',
 
 	/*
 	|--------------------------------------------------------------------------

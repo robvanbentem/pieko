@@ -13,15 +13,15 @@ Route::get('/', function () {
  */
 
 /* Common */
-Route::get('pieko/common/todo.html', 'CommonController@getTodo');
+Route::get('pieko/common/todo.html', 'ui\CommonController@getTodo');
 
 
 /* Shoplist */
-Route::get('pieko/shoplist/index.html', 'ShoplistController@getIndex');
+Route::get('pieko/shoplist/index.html', 'ui\ShoplistController@getIndex');
 
 
 /* Receipt */
-Route::get('pieko/receipt/index.html', 'ReceiptController@getIndex');
+Route::get('pieko/receipt/index.html', 'ui\ReceiptController@getIndex');
 
 
 /**
