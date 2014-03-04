@@ -1,8 +1,20 @@
 <?php
 
 /**
+ * Global patterns
+ */
+Route::pattern('id', '[0-9]+');
+Route::pattern('date', '[0-9]{4}-[0-9]{2}-[0-9]{2}');
+
+/**
+ * Filters
+ */
+Route::when('pieko/api/*', 'api');
+
+
+/**
  * Return our main app index file
- * @todo move to contoller
+ * @todo move to controller
  */
 Route::get('/', function () {
     return View::make('app.index');
@@ -10,37 +22,33 @@ Route::get('/', function () {
 
 
 /**
- * Global patterns
- */
-Route::pattern('id', '[0-9]+');
-Route::pattern('date', '[0-9]{4}-[0-9]{2}-[0-9]{2}');
-
-
-/**
  * All pieko/ui/.. routes are frontend routes
  */
+Route::group(array(), function () {
 
-/* Common */
-Route::get('pieko/ui/common/todo.html', 'ui\CommonController@getTodo');
+    /* Common */
+    Route::get('pieko/ui/common/todo.html', 'ui\CommonController@getTodo');
 
+    /* Shoplist */
+    Route::get('pieko/ui/shoplist/index.html', 'ui\ShoplistController@getIndex');
 
-/* Shoplist */
-Route::get('pieko/ui/shoplist/index.html', 'ui\ShoplistController@getIndex');
-
-
-/* Receipt */
-Route::get('pieko/ui/receipt/index.html', 'ui\ReceiptController@getIndex');
+    /* Receipt */
+    Route::get('pieko/ui/receipt/index.html', 'ui\ReceiptController@getIndex');
+});
 
 
 /**
  * pieko/api/.. are api controllers for angular
+ *
+ * api filter adds json content-type header
  */
+Route::group(array('after' => 'api_'), function () {
 
-/* Errand */
-Route::get('pieko/api/errand/get/{id}', 'api\ErrandController@getById');
-Route::get('pieko/api/errand/get/{date}', 'api\ErrandController@getByDate');
-
-Route::delete('pieko/api/errand/delete/{id}', 'api\ErrandController@deleteById');
+    /* Errand */
+    Route::get('pieko/api/errand/get/{id}', 'api\ErrandController@getById');
+    Route::get('pieko/api/errand/get/{date}', 'api\ErrandController@getByDate');
+    Route::delete('pieko/api/errand/delete/{id}', 'api\ErrandController@deleteById');
+});
 
 /**
  * Dirty catch all route for html5 pushstate mishandling
