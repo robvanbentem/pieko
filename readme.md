@@ -10,6 +10,7 @@ Multi-user grocery list with receipt/money management between users.
 - Reciepts
 - Overviews (today, month, year)
 - Admin? (users, products, shops, mail)
+- Testing
 
 ### Software used
 
