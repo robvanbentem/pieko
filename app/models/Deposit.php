@@ -10,10 +10,10 @@ class Deposit extends Eloquent {
     protected $table = 'deposits';
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
     {
-        return $this->hasOne('User');
+        return $this->belongsTo('User');
     }
 } 

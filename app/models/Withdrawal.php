@@ -9,4 +9,11 @@ class Withdrawal extends Eloquent {
 
     protected $table = 'withdrawals';
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('User');
+    }
 } 
