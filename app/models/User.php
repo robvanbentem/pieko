@@ -9,9 +9,9 @@ class User extends Eloquent {
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function orders()
+    public function errands()
     {
-        return $this->hasMany('Order');
+        return $this->hasMany('Errand');
     }
 
     /**

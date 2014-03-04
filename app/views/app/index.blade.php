@@ -20,7 +20,7 @@
     <script src="app/js/app.js"></script>
     <script src="app/js/common.js"></script>
     <script src="app/js/shoplist.js"></script>
-    <script src="app/js/payment.js"></script>
+    <script src="app/js/receipt.js"></script>
 
 </head>
 
@@ -41,7 +41,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li data-match-route="/shoplist"><a href="/shoplist">{{ trans('common.nav.shoplist') }}</a></li>
-                    <li data-match-route="/payment"><a href="/payment">{{ trans('common.nav.payment') }}</a></li>
+                    <li data-match-route="/receipt"><a href="/receipt">{{ trans('common.nav.receipt') }}</a></li>
                     <li data-match-route="/todo"><a href="/todo">{{ trans('common.nav.todo') }}</a></li>
                     <li class="dropdown">
                         <a href="#" bs-dropdown="dropdown" data-animation="am-flip-x">Drop da bass <b class="caret"></b></a>

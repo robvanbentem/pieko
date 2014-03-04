@@ -7,9 +7,9 @@
  * @description  
  */
 
-class PaymentController extends BaseController {
+class ReceiptController extends BaseController {
     public function getIndex()
     {
-        return View::make('payment/index');
+        return View::make('receipt/index');
     }
 } 

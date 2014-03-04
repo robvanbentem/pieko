@@ -9,5 +9,5 @@
 
 
 return array(
-    'title' => 'Betalingen'
+    'title' => 'Bonnen'
 );

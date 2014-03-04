@@ -5,7 +5,7 @@
  * Time: 7:10 PM
  */
 
-class Product extends Eloquent {
+class Errand extends Eloquent {
 
     protected $table = 'products';
 

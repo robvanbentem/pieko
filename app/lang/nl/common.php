@@ -9,7 +9,7 @@
 
 return [
     'nav' => [
-        'payment' => 'Betalen',
+        'receipt' => 'Bonnen',
         'shoplist' => 'Shoplist',
         'todo' => 'Todo'
     ]

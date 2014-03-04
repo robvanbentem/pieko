@@ -8,7 +8,7 @@ var pieko = angular.module('pieko', [
     'ngAnimate',
     'piCommon',
     'piShoplist',
-    'piPayment'
+    'piReceipt'
 ]);
 
 pieko.config(function ($interpolateProvider) {
@@ -27,9 +27,9 @@ pieko.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
             templateUrl: 'pieko/common/todo.html',
             controller: 'CTodo'
         }).
-        when('/payment', {
-            templateUrl: 'pieko/payment/index.html',
-            controller: 'CPayment'
+        when('/receipt', {
+            templateUrl: 'pieko/receipt/index.html',
+            controller: 'CReceipt'
         }).
         otherwise({
             redirectTo: '/todo'

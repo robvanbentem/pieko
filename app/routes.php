@@ -20,8 +20,8 @@ Route::get('pieko/common/todo.html', 'CommonController@getTodo');
 Route::get('pieko/shoplist/index.html', 'ShoplistController@getIndex');
 
 
-/* Payment */
-Route::get('pieko/payment/index.html', 'PaymentController@getIndex');
+/* Receipt */
+Route::get('pieko/receipt/index.html', 'ReceiptController@getIndex');
 
 
 /**

@@ -6,9 +6,9 @@
 
 /* Controllers */
 
-var piPayment = angular.module('piPayment', []);
+var piReceipt = angular.module('piReceipt', []);
 
-piShoplist.controller('CPayment', ['$scope',
+piReceipt.controller('CReceipt', ['$scope',
     function ($scope) {
 
     }]);
