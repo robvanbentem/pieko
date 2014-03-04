@@ -9,4 +9,11 @@ class Deposit extends Eloquent {
 
     protected $table = 'deposits';
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function user()
+    {
+        return $this->hasOne('User');
+    }
 } 

@@ -8,4 +8,12 @@
 class Product extends Eloquent {
 
     protected $table = 'products';
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function shop()
+    {
+        return $this->hasOne('Shop');
+    }
 }
