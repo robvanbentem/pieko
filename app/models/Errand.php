@@ -7,7 +7,7 @@
 
 class Errand extends Eloquent {
 
-    protected $table = 'products';
+    protected $table = 'errands';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

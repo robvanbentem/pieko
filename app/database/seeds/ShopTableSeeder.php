@@ -18,4 +18,5 @@ class ShopTableSeeder extends Seeder {
         Shop::create(array('name' => 'Anytyme'));
         Shop::create(array('name' => 'Vietnamees'));
         Shop::create(array('name' => 'Overig'));
-    }}
+    }
+}
