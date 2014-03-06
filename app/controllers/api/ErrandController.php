@@ -51,12 +51,28 @@ class ErrandController extends \ApiController
     }
 
     /**
+     * This returns errands that fall between a certain given date
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function getByDate()
     {
         return $this->success(
-            \Errand::where(\DB::raw('DATE(date)'), '=', \Route::input('date'))
+            \Errand::where('date_from', '<=', \Route::input('date'))
+                ->where('date_to', '>=', \Route::input('date'))
+                ->get()->toArray()
+        );
+    }
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getByDateAndUserId()
+    {
+        return $this->success(
+            \Errand::where('date_from', '<=', \Route::input('date'))
+                ->where('date_to', '>=', \Route::input('date'))
+                ->where('user_id', '=', \Route::input('id'))
                 ->get()->toArray()
         );
     }
