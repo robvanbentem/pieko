@@ -45,9 +45,22 @@ Route::group(array(), function () {
 Route::group(array('after' => 'api_'), function () {
 
     /* Errand */
-    Route::get('pieko/api/errand/get/{id}', 'api\ErrandController@getById');
-    Route::get('pieko/api/errand/get/{date}', 'api\ErrandController@getByDate');
-    Route::delete('pieko/api/errand/delete/{id}', 'api\ErrandController@deleteById');
+    Route::get('pieko/api/errand/{id}', 'api\ErrandController@getById');
+    Route::get('pieko/api/errand/{date}', 'api\ErrandController@getByDate');
+    Route::delete('pieko/api/errand/{id}', 'api\ErrandController@deleteById');
+    Route::post('pieko/api/errand/{id}', 'api\ErrandController@postCreate');
+
+    /* Receipt */
+    Route::get('pieko/api/receipt/{id}', 'api\ReceiptController@getById');
+    Route::get('pieko/api/receipt/{date}', 'api\ReceiptController@getByDate');
+    Route::delete('pieko/api/receipt/{id}', 'api\ReceiptController@deleteById');
+    Route::post('pieko/api/receipt/{id}', 'api\ReceiptController@postCreate');
+
+    /* Product */
+    Route::get('pieko/api/product/{id}', 'api\ProductController@getById');
+    Route::get('pieko/api/product/search/{id}/{name}', 'api\ProductController@getByShopIdAndName');
+    Route::get('pieko/api/product/search/{name}', 'api\ProductController@getByName');
+    Route::get('pieko/api/product/shop/{id}', 'api\ProductController@getByShopId');
 });
 
 /**

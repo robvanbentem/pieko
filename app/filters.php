@@ -25,9 +25,9 @@ App::after(function($request, $response)
 /**
  * Set our content-type to application/json for _all_ api responses
  */
-Route::filter('api_', function($route, $request, \Illuminate\Http\Response $response = null)
+Route::filter('api_', function($route, $request, $response = null)
 {
-    if($response !== null){
+    if($response !== null && $response instanceof \Illuminate\Http\Response){
         $response->header('Content-type', 'application/json');
     }
 });

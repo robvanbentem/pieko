@@ -10,6 +10,16 @@ class Errand extends Eloquent {
     protected $table = 'errands';
 
     /**
+     * @var array
+     */
+    static $rules = array(
+        'amount' => 'required|numeric',
+        'date' => 'required|date',
+        'user_id' => 'required|exists:users',
+        'product_id' => 'required|exists:products'
+    );
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()

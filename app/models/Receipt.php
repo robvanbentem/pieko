@@ -1,13 +1,24 @@
 <?php
+
 /**
  * Created by: Rob van Bentem
  * Date: 3/4/14
  * Time: 7:12 PM
  */
-
-class Receipt extends Eloquent {
+class Receipt extends Eloquent
+{
 
     protected $table = 'receipts';
+
+    /**
+     * @var array
+     */
+    static $rules = array(
+        'amount' => 'required|numeric',
+        'date' => 'required|date',
+        'user_id' => 'required|exists:users',
+        'shop_id' => 'required|exists:shops'
+    );
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

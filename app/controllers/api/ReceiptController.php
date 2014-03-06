@@ -1,25 +1,25 @@
 <?php
 /**
  * Created by: Rob van Bentem
- * Date: 3/4/14
- * Time: 8:57 PM
+ * Date: 3/6/14
+ * Time: 7:19 PM
  */
 
 namespace api;
 
-class ErrandController extends \ApiController
-{
+
+class ReceiptController extends \ApiController {
 
     /**
      * @return \Illuminate\Http\JsonResponse
      */
     public function postCreate()
     {
-        $v = \Validator::make(\Input::all(), \Errand::$rules);
+        $v = \Validator::make(\Input::all(), \Receipt::$rules);
 
         if ($v->passes()) {
             return $this->success(array(
-                'success' => \Errand::create(\Input::all())->exists
+                'success' => \Receipt::create(\Input::all())->exists
             ));
         } else {
             return $this->fail(array(
@@ -28,13 +28,14 @@ class ErrandController extends \ApiController
         }
     }
 
+
     /**
      * @return \Illuminate\Http\JsonResponse
      */
     public function deleteById()
     {
         return $this->success(array(
-            'success' => \Errand::destroy(\Route::input('id')) ? true : false
+            'success' => \Receipt::destroy(\Route::input('id')) ? true : false
         ));
     }
 
@@ -44,7 +45,7 @@ class ErrandController extends \ApiController
     public function getById()
     {
         try {
-            return $this->success(\Errand::findOrFail(\Route::input('id'))->toArray());
+            return $this->success(\Receipt::findOrFail(\Route::input('id'))->toArray());
         } catch (\Exception $e) {
             return $this->fail(array('error' => $e->getMessage()));
         }
@@ -56,7 +57,7 @@ class ErrandController extends \ApiController
     public function getByDate()
     {
         return $this->success(
-            \Errand::where(\DB::raw('DATE(date)'), '=', \Route::input('date'))
+            \Receipt::where(\DB::raw('DATE(date)'), '=', \Route::input('date'))
                 ->get()->toArray()
         );
     }

@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Created by: Rob van Bentem
  * Date: 3/4/14
  * Time: 8:58 PM
  */
-
-class ApiController extends Controller {
+class ApiController extends Controller
+{
 
     /**
      * @param array $array
@@ -14,11 +15,21 @@ class ApiController extends Controller {
      */
     public function toJson(array $array)
     {
-        if($json = json_encode($array)){
+        if ($json = json_encode($array)) {
             return $json;
         }
 
         throw new Exception('Cannot encode to json');
+    }
+
+    public function success(array $array)
+    {
+        return \Response::json($array, 200);
+    }
+
+    public function fail(array $array)
+    {
+        return \Response::json($array, 400);
     }
 
 } 
