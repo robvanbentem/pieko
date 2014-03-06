@@ -22,6 +22,3 @@
             ng-non-bindable>[[ ]]</code> handles in plaats van <code>@{{ }}</code>.
     </li>
 </ul>
-
-
-Ter inspiratie hier een link naar een onafgemaakte <a target="_blank" href="http://pieko3.rvb87.org/">pieko3</a>. Inloggen met rob/secret.

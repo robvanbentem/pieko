@@ -48,6 +48,7 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                    <li class=""><a href="https://github.com/robvanbentem/pieko" target="_blank">github</a></li>
                     <li class=""><a>v{{ Config::get('pieko.app.version') }}</a></li>
                 </ul>
             </div>
