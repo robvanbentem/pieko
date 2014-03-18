@@ -62,6 +62,12 @@ Route::group(array('after' => 'api_'), function () {
     Route::get('pieko/api/product/shop/{id}/name/{name}', 'api\ProductController@getByShopIdAndName'); // get by shop id and %name%
     Route::get('pieko/api/product/name/{name}', 'api\ProductController@getByName'); // get by %name%
     Route::get('pieko/api/product/shop/{id}', 'api\ProductController@getByShopId'); // get by shop id
+
+    /* User */
+    Route::get('pieko/api/users','api\UserController@getAll');
+
+    /* Shop */
+    Route::get('pieko/api/shops','api\ShopController@getAll');
 });
 
 /**
